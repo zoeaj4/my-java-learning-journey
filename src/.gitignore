@@ -1,0 +1,20 @@
+# Ignore compiled files
+*.class
+
+# Ignore IDE files
+.idea/
+.settings/
+.project
+.classpath
+.vscode/
+
+# Ignore build folders
+bin/
+out/
+target/
+
+# Ignore OS junk
+.DS_Store
+
+# Ignore JRE / SDK references (just in case)
+.jre/
