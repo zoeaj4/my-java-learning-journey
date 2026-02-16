@@ -19,6 +19,7 @@ public class PasswordValidator {
         String password = input.nextLine();
 
         checkValidity(password);
+        input.close();
     }
 
     public static void checkValidity(String s) {
@@ -52,5 +53,5 @@ public class PasswordValidator {
         }
         return false;
     }
-
+    
 }
