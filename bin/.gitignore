@@ -18,6 +18,3 @@ target/
 
 # Ignore JRE / SDK references (just in case)
 .jre/
-/.gitignore
-/basics/
-/oop/
