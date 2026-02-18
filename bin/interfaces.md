@@ -30,3 +30,19 @@ With interfaces, we can simulate multiple inheritance by allowing a class, in ad
 ### Code example
 
 	class Boss extends Employee implements Interface1, Interface2
+	
+#### Another code example.
+        
+        // Here we are applying the substitution principle to instantiate the interface. 
+        
+        Employee commercialDirector = new Manager ("Sandra", 80000, 2012, 05, 05);
+        
+        Comparable example = new Employee ("Elizabeth", 8000,2011,06,07);
+        
+        if (commercialDirector instanceof Employee) {
+        	System.out.println("It's a manager");
+        }
+        if (example instanceof Comparable) {
+        	System.out.println("It implements the Comparable interface");
+        }
+        
