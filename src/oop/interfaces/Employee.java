@@ -17,7 +17,7 @@ import java.util.GregorianCalendar;
 /* New changes: we implemented interfaces in this code.
 * */
 
-public class Employee implements Comparable { 
+public class Employee implements Comparable, Workers { 
 
     private String name;
     private double salary;
@@ -78,6 +78,12 @@ public class Employee implements Comparable {
         double increase = salary * percentage / 100;
         salary += increase;
     }
+    
+    public double setBonus (double Bonus) {
+    	return Workers.baseBonus + Bonus;
+    }
+    
+    
     // by implementing the "Comparable" Interface it forces us to overwrite the "compareTo" method.
        
     public int compareTo(Object object) {
@@ -96,7 +102,7 @@ public class Employee implements Comparable {
     public static void main(String[] args) {
 
         Manager hrBoss = new Manager("Aurelion Sol", 10, 1999, 10, 1);
-        hrBoss.setBonus(1000);
+        hrBoss.setTip(1000);
 
         Employee[] employees = new Employee[6];
 
@@ -111,8 +117,8 @@ public class Employee implements Comparable {
         
         
         // Casting from Employee to Manager in order to use Manager-specific methods
-        Manager financeManager = (Manager) employees[6];
-        financeManager.setBonus(60);
+        Manager financeManager = (Manager) employees[5];
+        financeManager.setTip(60);
         
  
 
@@ -120,7 +126,8 @@ public class Employee implements Comparable {
         // Manager wrongCast = (Manager) employees[1];
         
         Arrays.sort(employees); // we implement Arrays.sort which requires us to implement the Comparable interface and override the compareTo method 
-        for (Employee e : employees) {
+
+               for (Employee e : employees) {
             System.out.println(
                 "ID: " + e.getId() +
                 " | Name: " + e.getName() +
@@ -128,13 +135,17 @@ public class Employee implements Comparable {
                 " | Hire date: " + e.getHireDate()
             );
         }
+       
+        System.out.println("The " + hrBoss.getName() + " has a " + hrBoss.setBonus(1000) +  " bonus");
+        
+        System.out.println("The " + employees[4].getName() + " has a " + employees[4].setBonus(1000) + " bonus");
     }
 }
 
 // I implement the "Bosses" interface
 class Manager extends Employee implements Bosses {
 
-    private double bonus;
+    private double tip;
 
     public Manager(String name, double salary, int year, int month, int day) {
         super(name, salary, year, month, day);
@@ -143,15 +154,19 @@ class Manager extends Employee implements Bosses {
     @Override
     public double getSalary() {
         double baseSalary = super.getSalary();
-        return baseSalary + bonus;
+        return baseSalary + tip;
+    }
+    
+    public double setBonus (double bonus) {
+    	double plus = 2000;
+    	return Workers.baseBonus + bonus + plus;
+    }
+    public double getTip() {
+        return tip;
     }
 
-    public double getBonus() {
-        return bonus;
-    }
-
-    public void setBonus(double bonus) {
-        this.bonus = bonus;
+    public void setTip(double tip) {
+        this.tip = tip;
     }
     
     public String makeDecisions (String decision) {
