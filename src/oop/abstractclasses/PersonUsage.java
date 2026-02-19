@@ -1,4 +1,4 @@
-package oop.abstractclasses;
+package oop.abstractClasses;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -15,7 +15,7 @@ public class PersonUsage {
     public static void main(String[] args) {
 
         Person[] people = new Person[2];
-        people[0] = new Employee("Luis", 5000, 2009, 2, 25);
+        people[0] = new Employee2("Luis", 5000, 2009, 2, 25);
         people[1] = new Student("Ana", "Accounting");
 
         for (Person p : people) {
@@ -39,7 +39,7 @@ abstract class Person {
     public abstract String getDescription();
 }
 
-class Employee extends Person {
+class Employee2 extends Person {
 
     private double salary;
     private Date hireDate;
@@ -47,7 +47,7 @@ class Employee extends Person {
     private int id;
 
     // ===== CONSTRUCTOR =====
-    public Employee(String name, double salary, int year, int month, int day) {
+    public Employee2(String name, double salary, int year, int month, int day) {
         super(name);
         this.salary = salary;
 
