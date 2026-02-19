@@ -1,4 +1,4 @@
-# My notes for access modifiers
+# My notes on access modifiers
 
 Access modifiers determine from where a class, attribute, or method can be accessed. They are used to apply encapsulation.
 
