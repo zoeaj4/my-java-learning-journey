@@ -1,4 +1,4 @@
-package gui.events;
+      package gui.events;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;

@@ -20,7 +20,7 @@ public class TimerTest {
 		// TODO Auto-generated method stub
 		
 		GiveMeHour listener = new GiveMeHour();
-		Timer myTimer = new Timer(3000, listener);
+		Timer myTimer = new Timer(1000, listener);
 		myTimer.start();
 		JOptionPane.showMessageDialog(null, "Press OK to stop");
 		System.exit(0);
