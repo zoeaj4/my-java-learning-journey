@@ -7,7 +7,7 @@ import java.awt.event.*;
 //Learned how to handle events from multiple sources using Actions and how to bind keyboard shortcuts to trigger the same behavior as buttons.
 
 
-public class MultiSourceEventTesting {
+public class MultiSourceEventTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
